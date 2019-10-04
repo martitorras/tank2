@@ -43,8 +43,13 @@ public class SteeringArrive : MonoBehaviour {
             move.SetMovementVelocity(Vector3.zero);
 
         }
-            
-            Mathf.Clamp(accel.magnitude, move.max_mov_acceleration, -move.max_mov_acceleration);
+        /*else if (desired.magnitude < slow_distance)
+        {
+            move.SetMovementVelocity();
+
+        }*/
+
+        Mathf.Clamp(accel.magnitude, move.max_mov_acceleration, -move.max_mov_acceleration);
             move.AccelerateMovement(accel);
 
 
